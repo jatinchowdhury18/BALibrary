@@ -254,7 +254,7 @@ bool Potentiometer::getValue(float &value) {
     if (valFilter == m_lastValidValue) { // check if value hasn't changed
         return false;
     }
-    if (abs((int)valFilter - (int)m_lastValidValue) < m_changeThreshold) {
+    if (abs((int)valFilter - (int)m_lastValidValue) < (int)m_changeThreshold) {
         // The value has not exceeded the change threshold. Suppress the change only if it's not
         // near the limits. This is necessary to ensure the limits can be reached.
         if ( (valFilter < m_maxCalibrationThresholded) && (valFilter > m_minCalibrationThresholded)) {
