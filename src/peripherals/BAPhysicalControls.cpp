@@ -19,18 +19,6 @@
 */
 #include "BAPhysicalControls.h"
 
-// These calls must be define in order to get vector to work on arduino
-namespace std {
-void __throw_bad_alloc() {
-  if (Serial) { Serial.println("Unable to allocate memory"); }
-  abort();
-}
-void __throw_length_error( char const*e ) {
-  if (Serial) { Serial.print("Length Error :"); Serial.println(e); }
-  abort();
-}
-}
-
 namespace BALibrary {
 
 BAPhysicalControls::BAPhysicalControls(unsigned numSwitches, unsigned numPots, unsigned numEncoders, unsigned numOutputs) {
